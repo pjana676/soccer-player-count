@@ -1,10 +1,16 @@
 import cv2
 import numpy as np
+import os
 
 def count_people(image_data):
-    net = cv2.dnn.readNet("/Users/www.abcom.in/Documents/pritam/darknet/cfg/yolov3.weights", "/Users/www.abcom.in/Documents/pritam/darknet/cfg/yolov3.cfg")
+    DARKNET_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "darknet")
+    print(DARKNET_DIR)
+    net = cv2.dnn.readNet(
+        "/app/darknet/cfg/yolov3.weights",
+        "/app/darknet/cfg/yolov3.cfg"
+    )
     classes = []
-    with open("/Users/www.abcom.in/Documents/pritam/darknet/data/coco.names", 'r') as f:
+    with open("/app/darknet/data/coco.names", 'r') as f:
         classes = [line.strip() for line in f.readlines()]
 
     nparr = np.fromstring(image_data, np.uint8)
