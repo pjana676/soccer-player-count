@@ -23,12 +23,13 @@ WORKDIR /app/darknet
 # Build Darknet (adjust options if needed)
 RUN make
 
-WORKDIR /app/darknet/cfg
-
+# Create the /app/cfg directory
 RUN wget https://pjreddie.com/media/files/yolov3.weights
+
 
 # Create and set the working directory
 WORKDIR /app
+
 
 # Copy the requirements.txt file to the container
 COPY requirements.txt /app/

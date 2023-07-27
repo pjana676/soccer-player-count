@@ -1,12 +1,11 @@
 import cv2
 import numpy as np
 import os
+import sys
 
 def count_people(image_data):
-    DARKNET_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "darknet")
-    print(DARKNET_DIR)
     net = cv2.dnn.readNet(
-        "/app/darknet/cfg/yolov3.weights",
+        "/app/darknet/yolov3.weights",
         "/app/darknet/cfg/yolov3.cfg"
     )
     classes = []
