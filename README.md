@@ -3,12 +3,8 @@ Registered users should be able to subscribe/unsubscribe to available matches an
 
 
 
-In one-line commend to run the project through docker container is -
-```
-docker compose up
-```
+Below commands to run the project through docker container is -
 
-else below commands - 
 ```
 docker build .
 ```
